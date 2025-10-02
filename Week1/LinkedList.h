@@ -20,6 +20,9 @@ public:
 	// Truy cập O(n)
 	int search(int index) {
 		Node* current = head;
+		if (index == 0) {
+			return head->data;
+		}
 		for (int i = 0; i < index; i++) {
 			if (current == NULL) return -1;
 			current = current->next;
@@ -73,26 +76,29 @@ public:
 
 
 	// Xóa phần tử đầu O(1)
-	void removeFirst() {
+	int removeFirst() {
 		Node* temp = head;
+		int x = temp->data;
 		head = head->next;
 		delete temp;
+		return x;
 	}
 
 	// Xóa phần tử cuối O(n)
 	void removeLast() {
 		if (head == NULL) return;
 		if (head->next == NULL) {
+			int x = head->data;
 			delete head;
-			head = NULL;
-			return;
+			cout << x;
 		}
 		Node* current = head;
-		while (current->next->next != NULL) {
+		while (current->next != NULL) {
 			current = current->next;
 		}
-		delete current->next;
-		current->next = NULL;
+		int x = current->data;
+		delete current;
+		cout << x;
 	}
 
 	// Xóa phần tử ở vị trí index O(n)
@@ -120,9 +126,71 @@ public:
 		cout << endl;
 	}
 
+	bool empty() {
+		return head == NULL;
+	}
+
+	int size() {
+		int count = 0;
+		while (head != NULL) {
+			head = head->next;
+			count++;
+		}
+		return count;
+	}
+
 	// Duyệt ngược danh sách O(n)
 
 };
 
+struct stack {
+	LinkedList ds;
+
+	bool isEmpty() {
+		return ds.empty();
+	}
+
+	void push(int item) {
+		ds.addLast(item);
+	}
+
+	int pop() {
+		ds.removeLast();
+	}
+
+	int size() {
+		ds.size();
+	}
+
+	int top() {
+		ds.search(ds.size());
+	}
+};
+
+struct queue {
+	LinkedList ds;
+
+	void enQueue(int item) {
+		ds.addLast(item);
+	}
+
+	int deQueue() {
+		return ds.removeFirst();
+	}
+
+	bool isEmpty() {
+		return ds.empty();
+	}
+
+	int front() {
+		return ds.search(0);
+	}
+
+	int size() {
+		ds.size();
+	}
+};
+
 #endif
+
 
