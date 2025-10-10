@@ -37,16 +37,20 @@ struct List {
 	}
 
 	// Xóa phần tử đầu O(n)
-	void removeFirst() {
+	int removeFirst() {
+		int x = a[0];
 		for (int i = 0; i < size - 1; i++) {
 			a[i] = a[i + 1];
 		}
 		size--;
+		return x;
 	}
 
 	// Xóa phần tử cuối O(1)
-	void removeLast() {
+	int removeLast() {
+		int x = a[size];
 		size--;
+		return x;
 	}
 
 	// Xóa phần tử ở vị trí index O(n)
@@ -71,6 +75,58 @@ struct List {
 			cout << a[i] << " ";
 		}
 		cout << endl;
+	}
+};
+
+struct stack {
+	List ds;
+
+	int n = ds.size - 1;
+
+	bool isEmpty() {
+		return ds.size == 0;
+	}
+
+	void push(int item) {
+		ds.addLast(item);
+	}
+
+	int pop() {
+		int x = ds.search(n);
+		ds.removeLast();
+		return x;
+	}
+
+	int top() {
+		return ds.search(n);
+	}
+
+	int size() {
+		return ds.size;
+	}
+};
+
+struct queue {
+	List ds;
+
+	bool isEmpty() {
+		return ds.size == 0;
+	}
+
+	void enQueue(int item) {
+		ds.addLast(item);
+	}
+
+	int deQueue() {
+		return ds.removeFirst();
+	}
+
+	int front() {
+		return ds.search(0);
+	}
+
+	int size() {
+		return ds.size;
 	}
 };
 #endif	
