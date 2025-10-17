@@ -1,5 +1,8 @@
-﻿  main.cpp
+﻿  BinaryHeap.cpp
 D:\Week1\Week1\BinaryHeap.cpp(27,9): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
+  main.cpp
+  PriorityQueue.cpp
+  Sort.cpp
+  symbolTable.cpp
+  Generating Code...
   Week1.vcxproj -> D:\Week1\x64\Debug\Week1.exe

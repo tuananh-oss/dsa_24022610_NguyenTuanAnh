@@ -1,40 +1,30 @@
 #include <iostream>
 #include <vector>
-#include "BinaryHeap.cpp"
-#include "PriorityQueue.cpp"
+#include "symbolTable.cpp"
 using namespace std;
 int main() {
-    cout << "HEAP" << endl;
-    BinaryHeap h;
-    h.insert(10);
-    h.insert(30);
-    h.insert(20);
-    h.insert(5);
-    h.insert(40);
-    h.print();
+	cout << "Symbol Table by Linked List" << endl;
+	SymbolTable st;
+	st.insert("a", 1);
+	st.insert("b", 2);
+	st.insert("c", 3);
+	st.insert("d", 5);
+	st.print();
+	cout << "\nLookup 'c': " << st.lookup("c") << endl;
+	st.remove("b");
+	st.print();
 
-    cout << h.delMax() << endl;
-    h.print();
-    cout << h.max() << endl;
+	cout << "\nSymbol Table by Array" << endl;
+	ST st1;
+	st1.insert('a', 10);
+	st1.insert('b', 20);
+	st1.insert('c', 30);
+	st1.print();
+	st1.insert('f', 60);
+	cout << "\nLookup 'a': " << st1.lookup('c') << endl;
+	st1.remove('b');
+	st1.print();
 
-    cout << h.getsize() << endl;
 
-    cout << "PRIORITY QUEUE" << endl;
-    PriorityQueue pq;
-    pq.insert(10);
-    pq.insert(12);
-    pq.insert(6);
-    pq.insert(26);
-    pq.print();
-    
-    if (!pq.isEmpty()) {
-        cout << pq.delMax() << endl;
-    }
-    pq.print();
-
-    cout << pq.max() << endl;
-    pq.print();
-
-    cout<< pq.getsize();
 
 }

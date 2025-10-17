@@ -1,4 +1,5 @@
-﻿#ifndef LIST_H
+﻿#pragma once
+#ifndef LIST_H
 #define LIST_H
 #include <iostream>
 using namespace std;
@@ -7,6 +8,14 @@ struct List {
 	int size;
 	int a[100];
 
+	List() {
+		size = 0;
+	}
+
+	void set(int index, int value) {
+		if (index >= 0 && index < size)
+			a[index] = value;
+	}
 	// Truy cập O(1)
 	int search(int index) {
 		return a[index];
@@ -48,7 +57,7 @@ struct List {
 
 	// Xóa phần tử cuối O(1)
 	int removeLast() {
-		int x = a[size];
+		int x = a[size - 1]; 
 		size--;
 		return x;
 	}

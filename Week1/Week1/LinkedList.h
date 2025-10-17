@@ -1,4 +1,5 @@
-﻿#ifndef LINKEDLIST_H
+﻿#pragma once
+#ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include <iostream>
 using namespace std;
@@ -143,7 +144,7 @@ public:
 
 };
 
-struct stack {
+struct Mystack {
 	LinkedList ds;
 
 	bool isEmpty() {
@@ -167,7 +168,7 @@ struct stack {
 	}
 };
 
-struct queue {
+struct Myqueue {
 	LinkedList ds;
 
 	void enQueue(int item) {

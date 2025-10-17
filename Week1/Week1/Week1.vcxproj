@@ -131,6 +131,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PriorityQueue.cpp" />
     <ClCompile Include="Sort.cpp" />
+    <ClCompile Include="symbolTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
