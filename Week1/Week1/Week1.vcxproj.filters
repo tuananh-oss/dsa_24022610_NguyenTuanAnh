@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PriorityQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -31,6 +28,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BinarySearchTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearProbing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SeparateChaining.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
